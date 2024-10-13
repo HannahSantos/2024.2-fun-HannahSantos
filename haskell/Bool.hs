@@ -15,6 +15,11 @@ bor :: (Bool, Bool) -> Bool
 bor (False, False) = False
 bor (_, _) = True
 
+bxor :: (Bool, Bool) -> Bool
+bxor (True, False) = True
+bxor (False, True) = True
+bxor (_, _) = False
+
 bnot :: Bool -> Bool
 bnot True = False
 bnot False = True

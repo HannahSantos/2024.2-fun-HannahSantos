@@ -1,6 +1,8 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use camelCase" #-}
 module Functions where
 
-import Prelude hiding (Num(..), Bool, True, False, (<))
+import Prelude hiding (Num(..), Bool, True, False, (<), div)
 import Nat 
 import Bool
 
@@ -21,3 +23,8 @@ ev (S n) = od n
 od :: Nat -> Bool
 od O = False
 od (S n) = ev n
+
+if_then_else :: Bool -> a -> a -> a
+if_then_else True a b = a
+if_then_else False a b = b
+

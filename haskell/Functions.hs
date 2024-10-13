@@ -8,3 +8,8 @@ import Bool
 _ < O = False
 O < _ = True
 (S n) < (S m) = n < m
+
+(≤) :: Nat -> Nat -> Bool
+O ≤ _ = True
+_ ≤ O = False
+(S n) ≤ (S m) = n ≤ m

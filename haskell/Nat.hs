@@ -29,3 +29,7 @@ double = (*) (S (S O))
 pred :: Nat -> Nat
 pred O = O
 pred (S n) = n
+
+fact :: Nat -> Nat
+fact O = S O
+fact (S n) = S n * fact n

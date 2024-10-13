@@ -25,3 +25,7 @@ n ∸ _ = n
 
 double :: Nat -> Nat
 double = (*) (S (S O))
+
+pred :: Nat -> Nat
+pred O = O
+pred (S n) = n

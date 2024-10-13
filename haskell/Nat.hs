@@ -1,6 +1,6 @@
 module Nat where
 
-import Prelude hiding (Num(..), (^))
+import Prelude hiding (Num(..), (^), min)
 
 data Nat where
     O :: Nat
@@ -37,3 +37,7 @@ fact (S n) = S n * fact n
 fib :: Nat -> Nat
 fib (S (S n)) = fib (S n) + fib n
 fib n = n
+
+min :: (Nat, Nat) -> Nat
+min (S n, S m) = S (min (n, m))
+min (n, m) = O

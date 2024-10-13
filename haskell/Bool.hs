@@ -18,3 +18,6 @@ bor (_, _) = True
 bnot :: Bool -> Bool
 bnot True = False
 bnot False = True
+
+bnand :: (Bool, Bool) -> Bool
+bnand = bnot . band

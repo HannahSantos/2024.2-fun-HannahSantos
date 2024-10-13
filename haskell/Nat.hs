@@ -1,6 +1,6 @@
 module Nat where
 
-import Prelude hiding (Num(..), (^), min)
+import Prelude hiding (Num(..), (^), min, max)
 
 data Nat where
     O :: Nat
@@ -41,3 +41,8 @@ fib n = n
 min :: (Nat, Nat) -> Nat
 min (S n, S m) = S (min (n, m))
 min (n, m) = O
+
+max :: (Nat, Nat) -> Nat
+max (n, O) = n
+max (O, m) = m
+max (S n, S m) = S (max (n, m))

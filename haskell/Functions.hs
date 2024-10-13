@@ -2,7 +2,7 @@
 {-# HLINT ignore "Use camelCase" #-}
 module Functions where
 
-import Prelude hiding (Num(..), Bool, True, False, (<), div)
+import Prelude hiding (Num(..), Bool, True, False, (<), div, fst, snd)
 import Nat 
 import Bool
 
@@ -40,3 +40,6 @@ div (n, m) = if_then_else (n < m)
             (O, n) 
             (let (q', r') = div (n ∸ m, m)
                   in (S q', r'))
+
+quot :: (Nat, Nat) -> Nat
+quot = fst . div

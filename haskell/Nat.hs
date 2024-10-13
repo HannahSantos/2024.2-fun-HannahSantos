@@ -1,6 +1,6 @@
 module Nat where
 
-import Prelude hiding (Num(..))
+import Prelude hiding (Num(..), (^))
 
 data Nat where
     O :: Nat
@@ -14,3 +14,7 @@ n + (S m) = S (n + m)
 (*) :: Nat -> Nat -> Nat
 n * O = O
 n * (S m) = (n * m) + n
+
+(^) :: Nat -> Nat -> Nat
+n ^ O = S O
+n ^ (S m) = (n ^ m) * n

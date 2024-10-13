@@ -28,3 +28,9 @@ if_then_else :: Bool -> a -> a -> a
 if_then_else True a b = a
 if_then_else False a b = b
 
+div :: (Nat, Nat) -> (Nat, Nat)
+div (_, O) = error "Zero cannot go there, your computer might break."
+div (n, m) = if_then_else (n < m) 
+            (O, n) 
+            (let (q', r') = div (n ∸ m, m)
+                  in (S q', r'))

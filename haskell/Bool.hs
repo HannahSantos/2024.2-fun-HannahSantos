@@ -29,3 +29,6 @@ bnand = bnot . band
 
 bnor :: (Bool, Bool) -> Bool
 bnor = bnot . bor
+
+bxnor :: (Bool, Bool) -> Bool
+bxnor = bnot . bxor

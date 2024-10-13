@@ -25,6 +25,10 @@ od :: Nat -> Bool
 od O = False
 od (S n) = ev n
 
+zero :: Nat -> Bool
+zero O = True
+zero _ = False
+
 if_then_else :: Bool -> a -> a -> a
 if_then_else True a b = a
 if_then_else False a b = b

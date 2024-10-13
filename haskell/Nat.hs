@@ -22,3 +22,6 @@ n ^ (S m) = (n ^ m) * n
 (∸) :: Nat -> Nat -> Nat
 (S n) ∸ (S m) = n ∸ m
 n ∸ _ = n
+
+double :: Nat -> Nat
+double = (*) (S (S O))

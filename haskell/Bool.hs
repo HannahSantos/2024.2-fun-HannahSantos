@@ -21,3 +21,6 @@ bnot False = True
 
 bnand :: (Bool, Bool) -> Bool
 bnand = bnot . band
+
+bnor :: (Bool, Bool) -> Bool
+bnor = bnot . bor

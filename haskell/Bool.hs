@@ -14,3 +14,7 @@ band _ _ = False
 bor :: Bool -> Bool -> Bool
 bor False False = False
 bor _ _ = True
+
+bnot :: Bool -> Bool
+bnot True = False
+bnot False = True

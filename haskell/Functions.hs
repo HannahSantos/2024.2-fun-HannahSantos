@@ -2,7 +2,8 @@
 {-# HLINT ignore "Use camelCase" #-}
 module Functions where
 
-import Prelude hiding (Num(..), Bool, True, False, (<), div, fst, snd)
+import Prelude 
+    hiding (Num(..), Bool, True, False, (<), fst, snd, div, quot, rem)
 import Nat 
 import Bool
 
@@ -43,3 +44,6 @@ div (n, m) = if_then_else (n < m)
 
 quot :: (Nat, Nat) -> Nat
 quot = fst . div
+
+rem :: (Nat, Nat) -> Nat
+rem = snd . div

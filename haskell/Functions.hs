@@ -13,3 +13,11 @@ O < _ = True
 O ≤ _ = True
 _ ≤ O = False
 (S n) ≤ (S m) = n ≤ m
+
+ev :: Nat -> Bool
+ev O = True
+ev (S n) = od n
+
+od :: Nat -> Bool
+od O = False
+od (S n) = ev n

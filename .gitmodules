@@ -1,0 +1,3 @@
+[submodule "lean/LeanFun"]
+	path = lean/LeanFun
+	url = https://github.com/HannahSantos/LeanFun.git

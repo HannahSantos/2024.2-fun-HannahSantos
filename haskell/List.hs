@@ -3,7 +3,7 @@ module List where
 import Nat
 import Prelude 
     hiding (Num(..), map, length, elem, sum, product, (++), reverse,
-            all, any, take, drop)
+            all, any, take, drop, enumFrom)
 
 data List a where
     Nil :: List a
@@ -63,3 +63,6 @@ take _ _ = Nil
 drop :: Nat -> List a -> List a
 drop (S n) (Cons x xs) = drop n xs
 drop _ xs = xs
+
+enumFrom :: Nat -> List Nat
+enumFrom n = Cons n (enumFrom (S n))

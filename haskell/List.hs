@@ -1,7 +1,8 @@
 module List where
 
 import Nat
-import Prelude hiding (length)
+import Prelude 
+    hiding (length, elem)
 
 data List a where
     Nil :: List a
@@ -11,3 +12,9 @@ data List a where
 length :: List a -> Nat
 length Nil = O
 length (Cons x xs) = S (length xs)
+
+elem :: Eq a => a -> List a -> Bool
+elem _ Nil = False
+elem n (Cons x xs)
+    | n == x    = True
+    | otherwise = elem n xs

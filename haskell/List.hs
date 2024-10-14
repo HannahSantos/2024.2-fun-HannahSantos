@@ -2,7 +2,7 @@ module List where
 
 import Nat
 import Prelude 
-    hiding (Num(..), length, elem, sum, product)
+    hiding (Num(..), length, elem, sum, product, (++))
 
 data List a where
     Nil :: List a
@@ -26,3 +26,7 @@ sum (Cons x xs) = x + sum xs
 product :: List Nat -> Nat
 product Nil = S O
 product (Cons x xs) = x * product xs
+
+(++) :: List a -> List a -> List a
+Nil ++ ys = ys
+(Cons x xs) ++ ys = Cons x (xs ++ ys)

@@ -30,3 +30,7 @@ product (Cons x xs) = x * product xs
 (++) :: List a -> List a -> List a
 Nil ++ ys = ys
 (Cons x xs) ++ ys = Cons x (xs ++ ys)
+
+append :: a -> List a -> List a
+append x Nil = Cons x Nil
+append x (Cons y ys) = Cons y (append x ys)

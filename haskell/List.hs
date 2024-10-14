@@ -3,7 +3,7 @@ module List where
 import Nat
 import Prelude 
     hiding (Num(..), map, length, elem, sum, product, (++), reverse,
-            all, any)
+            all, any, take)
 
 data List a where
     Nil :: List a
@@ -55,3 +55,7 @@ any _ Nil = False
 any p (Cons x xs)
     | p x         = True
     | otherwise   = any p xs
+
+take :: Nat -> List a -> List a
+take (S n) (Cons x xs) = Cons x (take n xs)
+take _ _ = Nil

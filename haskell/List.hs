@@ -2,13 +2,17 @@ module List where
 
 import Nat
 import Prelude 
-    hiding (Num(..), length, elem, sum, product, (++), reverse,
+    hiding (Num(..), map, length, elem, sum, product, (++), reverse,
             all, any)
 
 data List a where
     Nil :: List a
     Cons :: a -> List a -> List a
     deriving (Eq, Show)
+
+map :: (a -> b) -> List a -> List b
+map _ Nil = Nil
+map f (Cons x xs) = Cons (f x) (map f xs)
 
 length :: List a -> Nat
 length Nil = O

@@ -2,7 +2,7 @@ module List where
 
 import Nat
 import Prelude 
-    hiding (length, elem)
+    hiding (Num(..), length, elem, sum)
 
 data List a where
     Nil :: List a
@@ -18,3 +18,7 @@ elem _ Nil = False
 elem n (Cons x xs)
     | n == x    = True
     | otherwise = elem n xs
+
+sum :: List Nat -> Nat
+sum Nil = O
+sum (Cons x xs) = x + sum xs

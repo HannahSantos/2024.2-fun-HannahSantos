@@ -2,7 +2,8 @@ module List where
 
 import Nat
 import Prelude 
-    hiding (Num(..), length, elem, sum, product, (++), reverse)
+    hiding (Num(..), length, elem, sum, product, (++), reverse,
+            all)
 
 data List a where
     Nil :: List a
@@ -38,3 +39,9 @@ append x (Cons y ys) = Cons y (append x ys)
 reverse :: List a -> List a
 reverse Nil = Nil
 reverse (Cons x xs) = append x (reverse xs)
+
+all :: (a -> Bool) -> List a -> Bool
+all _ Nil = True
+all p (Cons x xs)
+    | p x         = all p xs
+    | otherwise   = False

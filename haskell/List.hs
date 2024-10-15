@@ -1,9 +1,10 @@
 module List where
 
 import Nat
+import Functions
 import Prelude 
-    hiding (Num(..), map, length, elem, sum, product, (++), reverse,
-            all, any, take, drop, enumFrom)
+    hiding (Num(..), (<), map, length, elem, sum, product, (++), reverse,
+            all, any, take, drop, enumFrom, enumFromTo)
 
 data List a where
     Nil :: List a
@@ -66,3 +67,10 @@ drop _ xs = xs
 
 enumFrom :: Nat -> List Nat
 enumFrom n = Cons n (enumFrom (S n))
+
+enumFromTo :: Nat -> Nat -> List Nat
+enumFromTo n m 
+    | n == m    = Cons m Nil
+    | otherwise = if_then_else (m < n)
+                    (take (S (n ∸ m)) (enumFrom m))
+                    (enumFromTo m n)

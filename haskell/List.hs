@@ -74,3 +74,6 @@ enumFromTo n m
     | otherwise = if_then_else (m < n)
                     (take (S (n ∸ m)) (enumFrom m))
                     (enumFromTo m n)
+
+enumTo :: Nat -> List Nat
+enumTo = enumFromTo O

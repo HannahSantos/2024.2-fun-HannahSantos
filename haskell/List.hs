@@ -1,6 +1,7 @@
 module List where
 
 import Nat
+import Polyfuns
 import Functions
 import Prelude 
     hiding (Num(..), (<), map, length, elem, sum, product, (++), reverse,

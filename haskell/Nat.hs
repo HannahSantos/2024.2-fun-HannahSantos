@@ -12,11 +12,11 @@ n + O = n
 n + (S m) = S (n + m)
 
 (*) :: Nat -> Nat -> Nat
-n * O = O
+_ * O = O
 n * (S m) = (n * m) + n
 
 (^) :: Nat -> Nat -> Nat
-n ^ O = S O
+_ ^ O = S O
 n ^ (S m) = (n ^ m) * n
 
 (∸) :: Nat -> Nat -> Nat
@@ -40,7 +40,7 @@ fib n = n
 
 min :: (Nat, Nat) -> Nat
 min (S n, S m) = S (min (n, m))
-min (n, m) = O
+min (_, _) = O
 
 max :: (Nat, Nat) -> Nat
 max (n, O) = n

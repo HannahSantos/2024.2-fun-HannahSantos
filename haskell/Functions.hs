@@ -8,6 +8,10 @@ import Polyfuns
 import Nat 
 import Bool
 
+if_then_else :: Bool -> a -> a -> a
+if_then_else True a _ = a
+if_then_else False _ b = b
+
 (<) :: Nat -> Nat -> Bool
 _ < O = False
 O < _ = True
@@ -38,7 +42,7 @@ div (n, m) = if_then_else (n < m)
                   in (S q', r'))
 
 quot :: (Nat, Nat) -> Nat
-quot = fst . div
+quot = fst ∘ div
 
 rem :: (Nat, Nat) -> Nat
-rem = snd . div
+rem = snd ∘ div

@@ -1,5 +1,6 @@
 module Bool where
 
+import Polyfuns
 import Prelude hiding (Bool, True, False)
 
 data Bool where
@@ -25,10 +26,10 @@ bnot True = False
 bnot False = True
 
 bnand :: (Bool, Bool) -> Bool
-bnand = bnot . band
+bnand = bnot ∘ band
 
 bnor :: (Bool, Bool) -> Bool
-bnor = bnot . bor
+bnor = bnot ∘ bor
 
 bxnor :: (Bool, Bool) -> Bool
-bxnor = bnot . bxor
+bxnor = bnot ∘ bxor
